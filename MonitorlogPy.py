@@ -83,11 +83,6 @@ def gerarIp(i):
         return f'192.168.0.{random.randint(1, 254)}'
 
 
-# ============================
-# FUNÇÕES AINDA NÃO IMPLEMENTADAS
-# (mantidas apenas para o código funcionar)
-# ============================
-
 def gerarRecurso(i):
     return '/index.html'
 

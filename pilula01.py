@@ -1,28 +1,37 @@
 def validarSenha(senha):
     if len(senha) < 8:
-        return 'Senha invalida, muito curta,'
-    
+        return 'Senha inválida: muito curta'
+
     temNumero = False
-    temMiuscula = False
-    
+    temMaiuscula = False
+    temSimbolo = False
+
     for c in senha:
         if c == ' ':
-            return 'senha invalida, nao pode ter espaço'
-        if c >= '0' and c < '9' :
+            return 'Senha inválida: não pode conter espaço'
+
+        if c >= '0' and c <= '9':
             temNumero = True
-        if c > 'A' and c <= 'z':
+
+        if c >= 'A' and c <= 'Z':
             temMaiuscula = True
-        if c in temSimbolo = True
+
+        if not c.isalnum():  # símbolo (não é letra nem número)
+            temSimbolo = True
+
     if not temNumero:
-        return 'Senha invalida, precisa de um num, pelo menos'
+        return 'Senha inválida: precisa de pelo menos um número'
+
     if not temMaiuscula:
-        return 'senha invalida, precisa de uma letra maiuscula'
+        return 'Senha inválida: precisa de pelo menos uma letra maiúscula'
+
     if not temSimbolo:
-        return 'senha invalida, precisa de um simbulo'
-    
-        
-        
-    #main
-    senha = input('Digite a senha:')
-    r = validarSenha(senha)
-    print(r)
+        return 'Senha inválida: precisa de pelo menos um símbolo'
+
+    return 'Senha válida ✅'
+
+
+# main
+senha = input('Digite a senha: ')
+resultado = validarSenha(senha)
+print(resultado)

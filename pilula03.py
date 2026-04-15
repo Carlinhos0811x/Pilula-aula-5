@@ -1,15 +1,19 @@
 def verificarValores():
-    antarior = float(input('Leitura 1:'))      
+    anterior = float(input('Leitura 1: '))      
+
     for i in range(4):
-        atual = float(input(f'Leitura {i+2}: '))
+        atual = float(input(f'Leitura {i + 2}: '))
+        
         if atual <= anterior:
             return False
+        
         anterior = atual
+
     return True
 
-#main
+
+# main
 if verificarValores():
     print('crescente')
 else:
     print('instavel')
-    
